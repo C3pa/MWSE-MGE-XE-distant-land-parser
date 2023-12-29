@@ -1,0 +1,25 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "mkdocs - Install",
+			"type": "shell",
+			"command": "./install.bat",
+		},
+		{
+			"label": "mkdocs - Start Server",
+			"type": "shell",
+			"command": "./serve.bat",
+			"dependsOn": [
+				"mkdocs - Install"
+			],
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
