@@ -2,8 +2,6 @@ site_name: MWSE parser for distant land
 
 docs_dir: source
 
-# repo_url: https://github.com/MWSE/MWSE
-
 plugins:
   - awesome-pages
   - git-revision-date-localized:
@@ -59,7 +57,7 @@ markdown_extensions:
   - pymdownx.snippets:
       base_path: includes
       check_paths: true
-  - pymdownx.superfences:
+  - pymdownx.superfences
   - pymdownx.tilde
   - toc:
       permalink: ⚓︎
