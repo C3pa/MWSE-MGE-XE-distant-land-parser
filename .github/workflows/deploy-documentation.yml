@@ -11,6 +11,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -24,9 +27,12 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          # Mkdocs Revision Date plugin only needs info for docs
+          sparse-checkout: |
+            docs
 
-      - name: Set up Python 3.7
-        uses: actions/setup-python@v4
+      - name: Set up Python 3
+        uses: actions/setup-python@v5
         with:
           python-version: '3.x'
 
